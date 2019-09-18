@@ -7,7 +7,7 @@ var score_phrases= {
 var total_rounds = 5
 var levels = [4,3]
 var realindex= Math.floor(Math.random()*realtweets.length)
-var fakeindex= Math.floor(Math.random()*realtweets.length)
+var fakeindex= Math.floor(Math.random()*faketweets.length)
 
 var realtweet = realtweets[realindex];
 var faketweet = faketweets[fakeindex];
@@ -63,6 +63,9 @@ function refresh(side){
 
     gtag('event', 'Guess', {'event_category': 'Incorrect_fake','event_label': fakeindex.toString()});
     gtag('event', 'Guess', {'event_category': 'Incorrect_real','event_label': realindex.toString()});
+
+    console.log('realindex.toString():' , realindex.toString())
+    console.log('fakeindex.toString():' , fakeindex.toString())
 
 
     /* This line seems to 'reset' the element so that the transition can be run again. */
