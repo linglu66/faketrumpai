@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap/scss/bootstrap-reboot.scss"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <div class="container header">
+    <h1>Find the Fake Trump Tweet!</h1>
+    <p>Our team <a href='https://dessa.com'>@Dessa</a> made a Trump Tweet generator and classifier.
+      <a href='#'>Here's how we did it,</a> and <a href='https://dessa.com/atlas-trial/?u=%3Ctrump%3E'>here's what we used. </a><br>
+      See if you're better than our model - Can you guess which Trump tweet is fake?</p><br>
+    <h4 class ='round_no' id="round_no">Round </h2>
+      <p> Click on the tweet you think is fake. </p>
+
+  </div>
+
+  <div id="ring" class="container" >
+    <!-- <a class='hover' href='#'> -->
+    <div class="tooltip bs-tooltip-top" role="tooltip">
+    <div class="arrow"></div>
+    <div class="tooltip-inner">
+      Some tooltip text!
+    </div>
+  </div>
+    <div class='space'>
+    <a href='javascript:void(0);' data-toggle="tooltip" id ='left_corner' class ="container clickme card twitter-tweet">
+      <!-- <div id='left_corner' class='container' > -->
+        <!-- <div class='container tweet'> -->
+          <!-- < -->
+          <div class ='profile_pic'>
+            <img src = 'img/headshots/trump_headshot.jpg' class ='rounded'>
+          </div>
+          <p id="left_text">hello! Fake text is the best. My fake text is the greatest. #USA </p>
+          <p id='date'>2019-08-05</p>
+      <!-- </div> -->
+    </a>
+  </div>
+
+  <div class='space'>
+    <a href='javascript:void(0);' id ='right_corner' class ="container clickme card twitter-tweet">
+      <!-- <div id='left_corner' class='container' > -->
+        <!-- <div class='container tweet'> -->
+          <!-- < -->
+          <div class ='profile_pic'>
+            <img src = 'img/headshots/trump_headshot.jpg' class ='rounded'>
+          </div>
+          <p id="right_text">hello! Fake text is the best. My fake text is the greatest. Favourite vegetable is potato. hello! Fake text is the best. My fake text is the greatest. Favourite vegetable is potato #USA </p>
+          <p id='date'>2019-08-05</p>
+      <!-- </div> -->
+    </a>
+  </div>
+    <!-- </a> -->
+  </div>
+
+
+<div class='container bottom'>
+  <h5 id='correct'></h5>
+
+  <button type="button" class="btn btn-primary" onclick="location.href='index.html';">Reset</button>
+</div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body">
+          <h4 id='your_score'> Your Score: </h4>
+          <h1 id='score'></h1>
+          <p id='score_phrase'> </h4>
+          <p id='note'>Generating realistic fake text has become much more accessible.
+            We hope to highlight the current state of text generation to show how difficult it is to discern real from fake.</p>
+
+
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" onclick="location.href='index.html';">Try Again</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  </script>
+  <!-- <script src="js/vendor/modernizr-3.7.1.min.js"></script> -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/confetti.min.js" type='text/javascript'></script>
+  <script src="js/confetti.js" type='text/javascript'></script>
+
+  <!-- <script src="js/plugins.js"></script> -->
+  <script src="js/realtweets.js" type='text/javascript'></script>
+  <script src="js/faketweets.js" type='text/javascript'></script>
+
+  <script src="js/main.js" type='text/javascript'></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+</body>
+
+</html>
