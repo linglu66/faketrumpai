@@ -164,9 +164,9 @@ body{
 
 }
 img{
-  display: inline;
+  display: none;
     margin: 0 auto;
-    height: 100%;
+    /* height: 100%; */
     width: auto;
 }
 .space{
@@ -263,6 +263,12 @@ img{
 @media (min-width:768px) {
   .header{
     margin-top:15vh;
+  }
+  img{
+    display: inline;
+      margin: 0 auto;
+      height: 100%;
+      width: auto;
   }
   #ring{
     height: 250px;

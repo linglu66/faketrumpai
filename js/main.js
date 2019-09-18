@@ -6,8 +6,11 @@ var score_phrases= {
 }
 var total_rounds = 5
 var levels = [4,3]
-var realtweet = realtweets[Math.floor(Math.random()*realtweets.length)];
-var faketweet = faketweets[Math.floor(Math.random()*faketweets.length)];
+var realindex= Math.floor(Math.random()*realtweets.length)
+var fakeindex= Math.floor(Math.random()*realtweets.length)
+
+var realtweet = realtweets[realindex];
+var faketweet = faketweets[fakeindex];
 // document.getElementById("right_text").innerHTML = realtweet;
 // document.getElementById("left_text").innerHTML = faketweet;
 var count = 1;
@@ -38,6 +41,10 @@ function refresh(side){
     void correct_output.offsetWidth;
     correct_output.style.transition = 'opacity 2s';
     correct_output.style.opacity = '0';
+    // #google analytics events
+    gtag('event', 'Guess', {'event_category': 'Correct_fake','event_label': fakeindex});
+    gtag('event', 'Guess', {'event_category': 'Correct_real','event_label': realindex});
+
   }
   else{
     correct_output.style.transition='none';
@@ -53,6 +60,9 @@ function refresh(side){
 
     correct_output.style.transition = 'opacity 2s';
     correct_output.style.opacity = '0';
+
+    gtag('event', 'Guess', {'event_category': 'Incorrect_fake','event_label': fakeindex});
+    gtag('event', 'Guess', {'event_category': 'Incorrect_real','event_label': realindex});
 
 
     /* This line seems to 'reset' the element so that the transition can be run again. */
@@ -80,8 +90,11 @@ function refresh(side){
     }
   else{
     count++;
-    var realtweet = realtweets[Math.floor(Math.random()*realtweets.length)];
-    var faketweet = faketweets[Math.floor(Math.random()*faketweets.length)];
+    var realindex= Math.floor(Math.random()*realtweets.length)
+    var fakeindex= Math.floor(Math.random()*realtweets.length)
+    var realtweet = realtweets[realindex];
+    var faketweet = faketweets[fakeindex];
+
 
     if (Math.random() >= 0.5){
       document.getElementById("right_text").innerHTML = realtweet;
