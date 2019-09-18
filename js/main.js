@@ -42,8 +42,8 @@ function refresh(side){
     correct_output.style.transition = 'opacity 2s';
     correct_output.style.opacity = '0';
     // #google analytics events
-    gtag('event', 'Guess', {'event_category': 'Correct_fake','event_label': fakeindex});
-    gtag('event', 'Guess', {'event_category': 'Correct_real','event_label': realindex});
+    gtag('event', 'Guess', {'event_category': 'Correct_fake','event_label': fakeindex.toString()});
+    gtag('event', 'Guess', {'event_category': 'Correct_real','event_label': realindex.toString()});
 
   }
   else{
@@ -61,8 +61,8 @@ function refresh(side){
     correct_output.style.transition = 'opacity 2s';
     correct_output.style.opacity = '0';
 
-    gtag('event', 'Guess', {'event_category': 'Incorrect_fake','event_label': fakeindex});
-    gtag('event', 'Guess', {'event_category': 'Incorrect_real','event_label': realindex});
+    gtag('event', 'Guess', {'event_category': 'Incorrect_fake','event_label': fakeindex.toString()});
+    gtag('event', 'Guess', {'event_category': 'Incorrect_real','event_label': realindex.toString()});
 
 
     /* This line seems to 'reset' the element so that the transition can be run again. */
